@@ -1,0 +1,341 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+    ShapeWindow:
+    CircleWindow:
+    RectangleWindow:
+    TriangleWindow:
+    SquareWindow:
+
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        cols:1
+        canvas.before:
+            Color:
+                rgba: (1,1,1,.8)
+            Rectangle:
+                source : 'download.jpg'
+                size: self.size
+                pos: self.pos
+
+
+        rows:2
+        Label:
+            text: "Mathematics"
+            font_size: 40
+        GridLayout:
+            rows: 5
+
+            Button:
+                text: "Lesson1-Story"
+                background_color: (0.06, .36, .4, .775)
+                on_release:
+                    app.root.current = "second"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "Lesson2-Counting"
+                background_color: (0.06, .36, .4, .775)
+                on_release:
+                    app.root.current = "third"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "Lesson3-Addition"
+                background_color: (0.06, .36, .4, .775)
+                on_release:
+                    app.root.current = "fourth"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "Lesson4-Subtraction"
+                background_color: (0.06, .36, .4, .775)
+                on_release:
+                    app.root.current = "fifth"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "Lesson5-Shapes"
+                background_color: (0.06, .36, .4, .775)
+                on_release:
+                    app.root.current = "shape"
+                    root.manager.transition.direction = "left"
+
+            Button:
+                text: "back"
+                background_color: (0.06, .36, .4, .775)
+                on_release:
+                    app.root.current : "second"
+
+
+<SecondWindow>:
+    name: "second"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'donkey.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk1()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+
+
+
+
+
+<ThirdWindow>:
+    name: "third"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'count.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .375)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk2()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+
+
+
+<FourthWindow>:
+    name: "fourth"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'addition.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk3()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+
+
+
+<FifthWindow>:
+    name: "fifth"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'subtraction.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk4()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+
+
+<ShapeWindow>:
+    name: "shape"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'shape.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Start"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+        on_release:
+            app.root.current = "circle"
+            root.manager.transition.direction = "left"
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+
+<CircleWindow>:
+    name: "circle"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'circle.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_shp()
+        on_release:
+            app.root.current = "rectangle"
+            root.manager.transition.direction = "left"
+
+<RectangleWindow>:
+    name: "rectangle"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'rectangle.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_shp()
+        on_release:
+            app.root.current = "square"
+            root.manager.transition.direction = "left"
+
+<SquareWindow>:
+    name: "square"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'square.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .475)
+        pos: (258,350)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        background_color: (0.06, .36, .4, .475)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_shp()
+        on_release:
+            app.root.current = "triangle"
+            root.manager.transition.direction = "left"
+
+<TriangleWindow>:
+    name: "triangle"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'triangle.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Back"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"

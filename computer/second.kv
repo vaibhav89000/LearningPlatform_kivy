@@ -1,0 +1,208 @@
+WindowManager:
+    MainWindow:
+    MonitorWindow:
+    SpeakerWindow:
+    KeyboardWindow:
+    MouseWindow:
+    CpuWindow:
+    TestWindow:
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        cols:1
+        canvas.before:
+            Color:
+                rgba: (1,1,1,.8)
+            Rectangle:
+                source : 'computer.jpg'
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Computer"
+            font_size: 40
+
+
+        Button:
+            text: "Start"
+
+            size_hint: .7,.145
+            background_color: (0.06, .36, .4, .375)
+            font_size:40
+            on_release:
+                app.root.current = "monitor"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Back"
+
+            size_hint: .7,.145
+            background_color: (0.06, .36, .4, .375)
+            font_size:40
+
+<MonitorWindow>:
+    name: "monitor"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'monitor.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Start"
+        pos: (220,250)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_press: root.btn_clk()
+
+
+    Button:
+        text: "Next"
+        pos: (220,50)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_release:
+            app.root.current = "speaker"
+            root.manager.transition.direction = "left"
+
+<SpeakerWindow>:
+    name: "speaker"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'speaker.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Start"
+        pos: (220,250)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        pos: (220,50)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_release:
+            app.root.current = "keyboard"
+            root.manager.transition.direction = "left"
+
+<KeyboardWindow>:
+    name: "keyboard"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'keyboard.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Start"
+        pos: (220,250)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        pos: (220,50)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_release:
+            app.root.current = "mouse"
+            root.manager.transition.direction = "left"
+
+<MouseWindow>:
+    name: "mouse"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'mouse.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Start"
+        pos: (220,250)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        pos: (220,50)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_release:
+            app.root.current = "cpu"
+            root.manager.transition.direction = "left"
+
+<CpuWindow>:
+    name: "cpu"
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'cpu.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Start"
+        pos: (220,250)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        pos: (220,50)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size: 40
+        on_release:
+            app.root.current = "test"
+            root.manager.transition.direction = "left"
+
+<TestWindow>:
+    name: "test"
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'computer.jpg'
+            size: self.size
+            pos: self.pos
+
+    Label:
+        text: "Test"
+        pos: (220,250)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size:40
+
+    Button:
+        text: "Back"
+        pos: (220,50)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size: 40
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+
+
